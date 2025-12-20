@@ -3,187 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offre de Poste - Responsable Chassos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Fiche de Poste - Responsable Chassos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f8f9fa;
-            --paper-color: #ffffff;
-            --text-color: #1a1a1a;
-            --accent-color: #555555;
-            --border-color: #dddddd;
-            --sacred-bg: #121212;
+            --bg: #fdfdfd;
+            --text: #1a1a1a;
+            --line: #d1d1d1;
+            --dark-section: #111;
         }
 
-        /* Reset & Base */
         * { box-sizing: border-box; }
+        
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--bg);
+            color: var(--text);
             font-family: 'Inter', sans-serif;
-            line-height: 1.7;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            -webkit-font-smoothing: antialiased;
         }
 
-        /* Container Principal */
-        .container {
-            width: 95%;
+        .wrapper {
             max-width: 850px;
-            margin: 40px auto;
-            background: var(--paper-color);
-            padding: 10% 8%; /* Padding relatif pour s'adapter */
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin: 0 auto;
+            padding: 60px 25px;
         }
 
-        /* Header */
         header {
             text-align: center;
-            border-bottom: 2px solid var(--text-color);
+            border-bottom: 2px solid var(--text);
             padding-bottom: 40px;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.5rem, 5vw, 2.2rem); /* Taille fluide */
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             margin: 0;
-            line-height: 1.2;
-        }
-
-        .subtitle {
-            font-style: italic;
-            color: var(--accent-color);
-            margin-top: 15px;
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
-        }
-
-        /* Sections */
-        section { margin-bottom: 45px; }
-
-        .article-num {
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            display: block;
-            margin-bottom: 12px;
-            color: #888;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            margin: 25px 0 15px 0;
-            color: var(--text-color);
-        }
-
-        ul {
-            padding-left: 20px;
-            margin: 15px 0;
-        }
-
-        li { margin-bottom: 10px; }
-
-        /* Bloc Alerte / Note */
-        .warning-text {
-            border-left: 3px solid #000;
-            padding: 10px 0 10px 20px;
-            font-style: italic;
-            margin: 20px 0;
-            background: #fdfdfd;
-        }
-
-        /* Article 7 - La règle sacrée (Noir & Blanc) */
-        .sacred-rule {
-            background: var(--sacred-bg);
-            color: #eeeeee;
-            padding: 40px;
-            margin: 60px -8% 40px -8%; /* Sort légèrement du cadre sur desktop */
-            position: relative;
-        }
-
-        .sacred-rule h2 {
-            color: #fff;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-        }
-
-        .sacred-rule .article-num { color: #666; }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 80px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-size: 0.85rem;
-            color: #999;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        /* MEDIA QUERIES (RESPONSIVE) */
-
-        /* Tablettes et dessous */
-        @media (max-width: 768px) {
-            .container {
-                margin: 0; /* Prend toute la largeur */
-                width: 100%;
-                border: none;
-                padding: 40px 25px;
-            }
-
-            .sacred-rule {
-                margin-left: -25px;
-                margin-right: -25px;
-                padding: 40px 25px;
-            }
+        .article {
+            margin-bottom: 50px;
         }
 
-        /* Mobiles */
-        @media (max-width: 480px) {
-            body { padding: 0; }
-            h1 { font-size: 1.4rem; }
-            h2 { font-size: 1.2rem; }
-            section { margin-bottom: 35px; }
-            .sacred-rule { padding: 30px 20px; }
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: block;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
-        /* Impression */
-        @media print {
-            body { background: white; }
-            .container { box-shadow: none; border: none; width: 100%; }
-            .sacred-rule { background: white; color: black; border: 2px solid black; }
+        .content {
+            padding-left: 10px;
+        }
+
+        .sub-article {
+            margin: 25px 0 15px 20px;
+        }
+
+        .sub-title {
+            font-weight: 600;
+            text-decoration: underline;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "—";
+            margin-right: 10px;
+            color: #888;
+        }
+
+        .warning {
+            background: #f4f4f4;
+            padding: 15px;
+            border-left: 4px solid var(--text);
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        /* Section Spéciale Article 7 */
+        .damocles-zone {
+            background: var(--dark-section);
+            color: #fff;
+            padding: 50px 40px;
+            margin: 80px 0;
+            position: relative;
+        }
+
+        .damocles-zone .article-title {
+            border-color: #444;
+            color: #fff;
+        }
+
+        .damocles-zone ul li::before {
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-top: 100px;
+            color: #777;
+            border-top: 1px solid var(--line);
+            padding-top: 20px;
+        }
+
+        /* Responsive fixes */
+        @media (max-width: 600px) {
+            .wrapper { padding: 30px 20px; }
+            .damocles-zone { padding: 30px 20px; margin: 50px -20px; }
+            .content { padding-left: 0; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="wrapper">
     <header>
-        <span class="article-num">Document Officiel</span>
-        <h1>Responsable Chassos (H/F)</h1>
-        <p class="subtitle">Accord de collaboration loyale et volontaire</p>
+        <h1>Fiche de Poste</h1>
+        <p style="letter-spacing: 3px; font-weight: 300;">RESPONSABLE CHASSOS (H/F)</p>
     </header>
 
-    <section>
-        <span class="article-num">Article 1</span>
-        <p><strong>Votre rôle :</strong> Collaborateur / Collaboratrice assermenté(e) au sein d'une structure fondée sur la loyauté humaine et l'absence de contrainte.</p>
+    <section class="article">
+        <span class="article-title">Article 1 – Intitulé du poste</span>
+        <div class="content">
+            <p><strong>Vous</strong><br>
+            Collaborateur / Collaboratrice assermenté(e) au sein d'une collaboration volontaire, non contraignante et fondée sur la loyauté humaine.</p>
+        </div>
     </section>
 
-    <section>
-        <span class="article-num">Article 2 & 3</span>
-        <p>Prise d'effet : <strong>16 décembre 2025</strong>.<br>
-        Nature : Accord de collaboration régi par les principes de l'Article 5.</p>
+    <section class="article">
+        <span class="article-title">Article 2 – Date de prise d'effet</span>
+        <div class="content">
+            <p>Le présent engagement prend effet le <strong>16 décembre 2025</strong>.</p>
+        </div>
     </section>
 
-    <section>
-        <span class="article-num">Article 4 – Période d'essai</span>
-        <p>Du 16/12/2025 au 15/03/2026. Objet unique de vérification :</p>
-        <ul>
-            <li>Compatibilité astrale réciproque.
+    <section class="article">
+        <span class="article-title">Article 3 – Nature du contrat</span>
+        <div class="content">
+            <p>Ce document constitue un accord de collaboration régi par les exigences définies dans l’article 5.</p>
+        </div>
+    </section>
+
+    <section class="article">
+        <span class="article-title">Article 4 – Période d'essai</span>
+        <div class="content">
+            <p>Une période d'essai de trois (3) mois, du 16/12/2025 au 15/03/2026, est instaurée. Cette période d’essai a pour unique objet de vérifier :</p>
+            <ul>
+                <li>la compatibilité astrale des collaborateurs,</li>
+                <li>xxxxx,</li>
+                <li>l'absence de malédictions numérales.</li>
+            </ul>
+            <div class="warning">
+                ⚠️ L’évaluation de la poursuite de la période d’essai ne peut pas être
+            </div>
+        </div>
+    </section>
+
+    <section class="article">
+        <span class="article-title">Article 5 – Exigences du poste</span>
+        <div class="content">
+            <p>La collaboration repose sur les cinq principes fondateurs suivants :</p>
+            <ul>
+                <li>Honnêteté absolue</li>
+                <li>Absence de contrainte ou d'effort forcé</li>
+                <li>Naïveté dans l’exercice de son travail</li>
+                <li>Absence totale d'attentes réciproques</li>
+                <li>Interdiction formelle d’aborder le sujet de l'Épée de Damoclès</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="article">
+        <span class="article-title">Article 6 – Déclinaison des principes</span>
+        
+        <div class="sub-article">
+            <span class="sub-title">6.1 Honnêteté</span>
+            <p>Le collaborateur s'engage à :</p>
+            <p><em>[Espace de silence]</em></p>
+        </div>
+
+        <div class="sub-article">
+            <span class="sub-title">6.2 Absence de contrainte</span>
+            <p>Il est expressément convenu que :</p>
+            <p><em>[Espace de silence]</em></p>
+        </div>
+
+        <div class="sub-article">
+            <span class="sub-title">6.3 Naïveté</span>
+            <p>La naïveté est reconnue comme une vertu opérationnelle. À ce titre :</p>
+            <p><em>[Espace de silence]</em></p>
+        </div>
+
+        <div class="sub-article">
+            <span class="sub-title">6.4 Absence d'attentes</span>
+            <p>Les parties renoncent explicitement à :</p>
+            <p><em>[Espace de silence]</em></p>
+        </div>
+    </section>
+
+    <div class="damocles-zone">
+        <span class="article-title">Article 7 – RÈGLE FONDAMENTALE ET IMPÉRATIVE RELATIVE À L'ÉPÉE DE DAMOCLÈS</span>
+        
+        <div class="sub-article">
+            <span class="sub-title">7.1 Principe général</span>
+            <p>Il est formellement, strictement et irrévocablement interdit d'évoquer l'existence de l'Épée de Damoclès suspendue au-dessus de la tête du collaborateur. Cette interdiction a valeur de clause fondamentale, supérieure à toute autre disposition du présent document.</p>
+        </div>
+
+        <div class="sub-article">
+            <span class="sub-title">7.2 Champ de l'interdiction</span>
+            <p>Sont notamment prohibés, sans que cette liste soit limitative :</p>
+            <ul>
+                <li>toute mention explicite de l'Épée,</li>
+                <li>toute allusion, métaphore, insinuation ou rappel indirect,</li>
+                <li>toute tentative d'humour, de mise en garde ou de sous-entendu,</li>
+                <li>toute utilisation de l'Épée comme levier psychologique, symbolique ou narratif.</li>
+            </ul>
+        </div>
+
+        <div class="sub-article">
+            <span class="sub-title">7.3 Obligation de silence</span>
+            <p>Les parties reconnaissent que l'Épée, qu'elle existe ou non, qu'elle soit réelle, imaginaire ou mythique, ne doit en aucun cas entrer dans le champ du langage, de la pensée partagée ou de la décision.</p>
+            <p>Le silence entourant ladite Épée constitue un pacte de protection, assimilable à un enchantement ancien scellé par consentement mutuel.</p>
+        </div>
+
+        <div class="sub-article">
+            <span class="sub-title">7.4 Effets juridiques</span>
+            <p>Toute violation de la présente règle pourra être considérée comme :</p>
+            <ul>
+                <li>une rupture de l'équilibre sacré de la collaboration,</li>
+                <li>une brèche dans le cercle de confiance,</li>
+                <li>un motif suffisant de dissolution immédiate de l'Ordre, sans préavis ni explication.</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="article">
+        <span class="article-title">Article 8 – Points d'avancement</span>
+        <div class="content">
+            <p>Un point mensuel, dit <strong>Conseil de Sagesse Astrale</strong>, est tenu. Ce point a pour finalité exclusive :</p>
+            <p><em>[Espace de silence]</em></p>
+            <p>Il fera l’objet d’un rapport écrit systématiquement par le collaborateur.</p>
+        </div>
+    </section>
+
+    <section class="article">
+        <span class="article-title">Article 9 – Fin de collaboration</span>
+        <div class="content">
+            <p>La collaboration peut prendre fin :</p>
+            <p><em>[Espace de silence]</em></p>
+            <p><strong>La fin de la collaboration n’est jamais considérée comme une défaite.</strong></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Fin du document – 2025</p>
+    </footer>
+</div>
+
+</body>
+</html>
