@@ -1,218 +1,267 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La galaxie JMTM 🌌</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            background-color:black;
-background-image:
-radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
-radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
-background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
-background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-            --text: #ffffff;
-            --accent: #555;
-            --light-grey: #f9f9f9;
-            --border: #e0e0e0;
-        }
+      :root {
+        background-color: black;
+        background-image: radial-gradient(
+            white,
+            rgba(255, 255, 255, 0.2) 2px,
+            transparent 40px
+          ),
+          radial-gradient(
+            white,
+            rgba(255, 255, 255, 0.15) 1px,
+            transparent 30px
+          ),
+          radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px),
+          radial-gradient(
+            rgba(255, 255, 255, 0.4),
+            rgba(255, 255, 255, 0.1) 2px,
+            transparent 30px
+          );
+        background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+        background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+        --text: #ffffff;
+        --accent: #555;
+        --light-grey: #f9f9f9;
+        --border: #e0e0e0;
+      }
 
-        * { box-sizing: border-box; }
-        
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        box-sizing: border-box;
+      }
 
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        line-height: 1.8;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      header {
+        text-align: center;
+        border-bottom: 1px solid var(--text);
+        padding-bottom: 40px;
+        margin-bottom: 50px;
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.5rem, 6vw, 2.2rem);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+      }
+
+      .intro-box {
+        background-color: var(--light-grey);
+        padding: 30px;
+        border-radius: 4px;
+        font-style: italic;
+        color: #000000;
+        margin-bottom: 60px;
+        border-left: 3px solid var(--text);
+        opacity: 60%;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 10px;
+        margin-top: 50px;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 30px;
+        color: var(--accent);
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      ul li {
+        padding: 8px 0;
+        border-bottom: 1px dotted var(--border);
+      }
+
+      ul li::before {
+        content: "•";
+        margin-right: 15px;
+        color: #999;
+      }
+
+      .ritual-section {
+        padding-left: 20px;
+        border-left: 1px solid var(--border);
+        margin: 20px 0;
+      }
+
+      .sponsors-img {
+        max-width: 350px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 40px auto;
+      }
+
+      .caption {
+        text-align: center;
+        font-size: 0.85rem;
+        color: #777;
+        margin-top: -30px;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      footer {
+        margin-top: 80px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #999;
+        border-top: 1px solid var(--border);
+        padding-top: 40px;
+      }
+
+      @media (max-width: 600px) {
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
+          padding: 30px 15px;
         }
-
-        header {
-            text-align: center;
-            border-bottom: 1px solid var(--text);
-            padding-bottom: 40px;
-            margin-bottom: 50px;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.5rem, 6vw, 2.2rem);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
         .intro-box {
-            background-color: var(--light-grey);
-            padding: 30px;
-            border-radius: 4px;
-            font-style: italic;
-          color: #000000;
-            margin-bottom: 60px;
-            border-left: 3px solid var(--text);
-            opacity: 60%;
+          padding: 20px;
         }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
-            margin-top: 50px;
-        }
-
-        h3 {
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 30px;
-            color: var(--accent);
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        ul li {
-            padding: 8px 0;
-            border-bottom: 1px dotted var(--border);
-        }
-
-        ul li::before {
-            content: "•";
-            margin-right: 15px;
-            color: #999;
-        }
-
-        .ritual-section {
-            padding-left: 20px;
-            border-left: 1px solid var(--border);
-            margin: 20px 0;
-        }
-
-        .image-placeholder {
-            width: 100%;
-            height: auto;
-            margin: 40px 0;
-            background: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--border);
-            color: #888;
-            font-style: italic;
-            min-height: 200px; /* À remplacer par vos vraies images */
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 40px auto;
-        }
-
-        .caption {
-            text-align: center;
-            font-size: 0.85rem;
-            color: #777;
-            margin-top: -30px;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        footer {
-            margin-top: 80px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #999;
-            border-top: 1px solid var(--border);
-            padding-top: 40px;
-        }
-
-        @media (max-width: 600px) {
-            .container { padding: 30px 15px; }
-            .intro-box { padding: 20px; }
-        }
+      }
     </style>
-</head>
-<body>
-
-<div class="container">
-    <header>
+  </head>
+  <body>
+    <div class="container">
+      <header>
         <h1>La galaxie JMTM 🌌</h1>
         <p>Le site officiel</p>
-    </header>
+      </header>
 
-    <div class="intro-box">
-        Suite à un entretien passé le 13/12/2025 à Paris, deux candidats au poste de RESPONSABLE CHASSOS (H/F) ont été recrutés pour une durée de 3 mois avec prise d’effet le 16/12/2025. Cette page a pour objectif de présenter les modalités du contrat.
-    </div>
+      <div class="intro-box">
+        Suite à un entretien passé le 13/12/2025 à Paris, deux candidats au
+        poste de RESPONSABLE CHASSOS (H/F) ont été recrutés pour une durée de 3
+        mois avec prise d'effet le 16/12/2025. Cette page a pour objectif de
+        présenter les modalités du contrat.
+      </div>
 
-    <section>
+      <section>
         <h2>Exigences du poste</h2>
-        <p>La pérennité de cette collaboration repose sur le respect strict des piliers suivants :</p>
+        <p>
+          La pérennité de cette collaboration repose sur le respect strict des
+          piliers suivants :
+        </p>
         <ul>
-            <li>Honnêteté absolue</li>
-            <li>Absence de contrainte ou d'effort forcé</li>
-            <li>Naïveté dans l’exercice de son travail</li>
-            <li>Absence totale d'attentes réciproques</li>
-            <li>Rituel du Shabbat Shatox</li>
+          <li>Honnêteté absolue</li>
+          <li>Absence de contrainte ou d'effort forcé</li>
+          <li>Naïveté dans l'exercice de son travail</li>
+          <li>Absence totale d'attentes réciproques</li>
         </ul>
-    </section>
+      </section>
 
-    <section>
-        <h2>Rituel du Shabbat Shatox</h2>
-        <p>Les employés doivent respecter les rites du Shabbat Shatox, dont les objectifs principaux sont la réflexion sur soi-même, l’arrêt de toute activité ainsi que la réunion de tous les RESPONSABLES CHASSOS.</p>
-        
+      <section>
+        <h2>Rituel du <i>Shabbat Shatox</i></h2>
+        <p>
+          Les employés doivent respecter les rites du <i>Shabbat Shatox</i>,
+          dont les objectifs principaux sont la réflexion sur soi-même, l'arrêt
+          de toute activité ainsi que la réunion de tous les RESPONSABLES
+          CHASSOS.
+        </p>
+
         <div class="ritual-section">
-            <h3>Déroulement du Rite</h3>
-            <ul>
-                <li><strong>Allumage de bougies :</strong> de préférence représentant Marie ou une autre sainte.</li>
-                <li><strong>Lecture des étoiles :</strong> accompagnée d’un petit apéritif.</li>
-                <li><strong>Remerciements :</strong> Entités divines (univers, Dieu, DRH CHASSOS, etc.) et Collaborateurs.</li>
-                <li><strong>Point de rétrospective collaborative :</strong> analyse des points négatifs suivis des points positifs.</li>
-                <li><strong>Lecture de la prière :</strong> récitation du "Notre Shatox".</li>
-                <li><strong>Dégustation :</strong> partage d’un délicieux repas préparé avec beaucoup d’amour.</li>
-                <li><strong>Sponsors :</strong> mention des partenaires de la collaboration.</li>
-            </ul>
+          <h3>Déroulement du Rite</h3>
+          <ul>
+            <li>
+              <strong>Allumage de bougies :</strong> de préférence représentant
+              Marie ou une autre sainte.
+            </li>
+            <li>
+              <strong>Lecture des étoiles :</strong> accompagnée d'un petit
+              apéritif.
+            </li>
+            <li>
+              <strong>Remerciements :</strong> Entités divines (univers, Dieu,
+              DRH CHASSOS, etc.) et Collaborateurs.
+            </li>
+            <li>
+              <strong>Point de rétrospective collaborative :</strong> analyse
+              des points négatifs suivis des points positifs.
+            </li>
+            <li>
+              <strong>Lecture de la prière :</strong> récitation du
+              <i>Notre Shatox</i>.
+            </li>
+            <li>
+              <strong>Dégustation :</strong> partage d'un délicieux repas
+              préparé avec beaucoup d'amour.
+            </li>
+          </ul>
         </div>
-    </section>
-    
-     <section>
+      </section>
+
+      <section>
         <h2>Sponsors</h2>
         <p>Ils nous soutiennent</p>
-        
-        <img src="bretagne.webp" alt="Ils nous soutiennent">
-        <img src="mines.webp" alt="Ils nous soutiennent">
-        <p class="caption">Ils nous soutiennent</p>
-    </section>
 
+        <img
+          src="img/bretagne.webp"
+          alt="Ils nous soutiennent"
+          class="sponsors-img"
+        />
+        <img
+          src="img/mines.webp"
+          alt="Ils nous soutiennent"
+          class="sponsors-img"
+        />
+        <p class="caption">Merci à eux d'être là pour nous</p>
+      </section>
 
-    <section>
+      <section>
+        <h2>Cartes du ciel</h2>
+        <p>Chassos 1</p>
+        <img src="img/carte_j.png" alt="J" />
+        <p>Chassos 2</p>
+        <img src="img/carte_t.png" alt="J" />
+        <p class="caption">Merci à eux d'être là pour nous</p>
+      </section>
+
+      <section>
         <h2>Traces</h2>
         <p>Archives visuelles et témoignages</p>
-        
-        <img src="ticket1.webp" alt="Traces de collaboration">
-        <img src="ticket2.webp" alt="Traces de collaboration">
-        <p class="caption">Archives des Traces</p>
-    </section>
 
-    <footer>
-        Document établi à Paris, le 16 décembre 2025
-    </footer>
-</div>
+        <img src="img/ticket1.webp" alt="Traces de collaboration" />
+        <img src="img/ticket2.webp" alt="Traces de collaboration" />
+        <p class="caption">Toutes les indices à l'énigme</p>
+      </section>
 
-</body>
+      <footer>Document établi à Paris, le 16 décembre 2025</footer>
+    </div>
+  </body>
 </html>
