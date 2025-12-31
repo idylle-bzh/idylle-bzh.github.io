@@ -65,7 +65,6 @@
             text-align: center;
             margin: 40px 0;
             padding: 30px;
-            background: var(--light-grey);
             border: 1px solid var(--border);
         }
 
@@ -323,8 +322,6 @@
 
         // Calcul des heures, minutes, secondes
         let hours = now.getHours() - startDate.getHours();
-        let minutes = now.getMinutes() - startDate.getMinutes();
-        let seconds = now.getSeconds() - startDate.getSeconds();
 
         if (seconds < 0) { minutes--; seconds += 60; }
         if (minutes < 0) { hours--; minutes += 60; }
@@ -334,7 +331,7 @@
         if (years > 0) result += years + (years > 1 ? " ans, " : " an, ");
         if (months > 0) result += months + " mois, ";
         result += days + (days > 1 ? " jours " : " jour ");
-        result += "et " + hours + "h " + minutes + "m " + seconds + "s";
+        result += "et " + hours + "h ";
 
         document.getElementById('timer').innerHTML = result;
     }
