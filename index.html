@@ -61,6 +61,29 @@
         margin-bottom: 50px;
       }
 
+      .counter-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: var(--light-grey);
+            border: 1px solid var(--border);
+        }
+
+        .counter-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        #timer {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 4vw, 1.5rem);
+            font-weight: 700;
+        }
+
       h1 {
         font-family: "Playfair Display", serif;
         font-size: clamp(1.5rem, 6vw, 2.2rem);
@@ -172,6 +195,11 @@
         présenter les modalités du contrat.
       </div>
 
+      <div class="counter-section">
+        <span class="counter-label">Temps écoulé depuis le commencement de l'idylle</span>
+        <div id="timer">Calcul du temps en cours...</div>
+    </div>
+
       <section>
         <h2>Exigences du poste</h2>
         <p>
@@ -263,5 +291,56 @@
 
       <footer>Document établi à Paris, le 16 décembre 2025</footer>
     </div>
+
+    <script>
+    function updateCounter() {
+        // Date de référence : 13 Décembre 2025 à 01:15
+        const startDate = new Date(2025, 11, 13, 1, 15, 0); 
+        const now = new Date();
+        
+        let diff = now - startDate;
+
+        if (diff < 0) {
+            document.getElementById('timer').innerHTML = "L'engagement n'a pas encore commencé.";
+            return;
+        }
+
+        // Calcul simple des années, mois, jours
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+
+        if (days < 0) {
+            months--;
+            let lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += lastMonth.getDate();
+        }
+
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+
+        // Calcul des heures, minutes, secondes
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        if (seconds < 0) { minutes--; seconds += 60; }
+        if (minutes < 0) { hours--; minutes += 60; }
+        if (hours < 0) { hours += 24; }
+
+        let result = "";
+        if (years > 0) result += years + (years > 1 ? " ans, " : " an, ");
+        if (months > 0) result += months + " mois, ";
+        result += days + (days > 1 ? " jours " : " jour ");
+        result += "et " + hours + "h " + minutes + "m " + seconds + "s";
+
+        document.getElementById('timer').innerHTML = result;
+    }
+
+    setInterval(updateCounter, 1000);
+    updateCounter();
+</script>
   </body>
 </html>
