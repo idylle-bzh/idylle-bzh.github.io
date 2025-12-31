@@ -322,6 +322,8 @@
 
         // Calcul des heures, minutes, secondes
         let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
 
         if (seconds < 0) { minutes--; seconds += 60; }
         if (minutes < 0) { hours--; minutes += 60; }
